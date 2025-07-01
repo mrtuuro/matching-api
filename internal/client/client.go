@@ -14,7 +14,7 @@ import (
 
 type CustomClient interface {
 	Healthcheck(ctx context.Context) error
-	SearchDriver(ctx context.Context, token string, body echo.Map) (dlSearchResp, error)
+	SearchDriver(ctx context.Context, token string, body echo.Map) (SearchResp, error)
 }
 
 type customHTTPClient struct {

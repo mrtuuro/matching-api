@@ -13,15 +13,15 @@ import (
 	"github.com/mrtuuro/matching-api/internal/model"
 )
 
-type dlSearchResp struct {
+type SearchResp struct {
 	Success bool                       `json:"success"`
 	Code    string                     `json:"code"`
 	Message string                     `json:"message"`
 	Data    []model.DriverWithDistance `json:"data"`
 }
 
-func (c *customHTTPClient) SearchDriver(ctx context.Context, token string, body echo.Map) (dlSearchResp, error) {
-	var payload dlSearchResp
+func (c *customHTTPClient) SearchDriver(ctx context.Context, token string, body echo.Map) (SearchResp, error) {
+	var payload SearchResp
 
 	_, err := c.cb.Execute(func() (any, error) {
 		buf, _ := json.Marshal(body)
