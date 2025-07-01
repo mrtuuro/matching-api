@@ -49,7 +49,7 @@ func (cl *customHTTPClient) Healthcheck(ctx context.Context) error {
 	fmt.Println("we are in healtheck request")
 
 	_, err := cl.cb.Execute(func() (any, error) {
-		req, _ := http.NewRequestWithContext(ctx, "GET", cl.baseURL+"/healthz", nil)
+		req, _ := http.NewRequestWithContext(ctx, "GET", cl.baseURL+"/v1/healthz", nil)
 		req.Header.Set("Authorization", "Bearer "+cl.token)
 
 		resp, err := cl.client.Do(req)

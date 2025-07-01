@@ -155,7 +155,8 @@ const docTemplate = `{
             ],
             "properties": {
                 "limit": {
-                    "type": "integer"
+                    "type": "integer",
+                    "minimum": 1
                 },
                 "location": {
                     "$ref": "#/definitions/handler.GeoPointDTO"

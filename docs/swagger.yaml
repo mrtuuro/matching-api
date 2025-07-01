@@ -17,6 +17,7 @@ definitions:
   handler.SearchDriverRequest:
     properties:
       limit:
+        minimum: 1
         type: integer
       location:
         $ref: '#/definitions/handler.GeoPointDTO'

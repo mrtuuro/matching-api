@@ -14,7 +14,7 @@ import (
 type SearchDriverRequest struct {
 	Location GeoPointDTO `json:"location" validate:"required"`
 	Radius   float64     `json:"radius" validate:"required,gt=0"`
-	Limit    int         `json:"limit" validate:"required,gt=1"`
+	Limit    int         `json:"limit" validate:"required,gte=1"`
 }
 
 type GeoPointDTO struct {
